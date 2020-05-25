@@ -13,7 +13,7 @@ If you want to run app.js on its own using: node app.js, it will be exposed thro
 Docker side:
 Copy and paste the Dockerfile file, make changes where necessary
 Build the docker image using: docker build -t docker-example-image .
-From this image, we can then create containers using it as a blueprint
+From this image, we can then create containers using it as a blueprint and run it
 docker run -p 8080:3000 docker-example-image
 Now the web app will be run inside the docker container and will be exposed through 192.168.99.100:8080 
 even though the container is mapping from localhost:3000
