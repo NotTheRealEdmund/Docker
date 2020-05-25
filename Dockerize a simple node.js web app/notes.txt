@@ -11,20 +11,21 @@ Also, a package-lock.json file will be created
 If you want to run app.js on its own using: node app.js, it will be exposed through localhost:3000
 
 Docker side:
-Copy and paste the Dockerfile file
+Copy and paste the Dockerfile file, make changes where necessary
 Build the docker image using: docker build -t docker-example-image .
 From this image, we can then create containers using it as a blueprint
 docker run -p 8080:3000 docker-example-image
-Now the web app should be run inside the docker container and should be exposed through 192.168.99.100:8080 
+Now the web app will be run inside the docker container and will be exposed through 192.168.99.100:8080 
 even though the container is mapping from localhost:3000
-Note that docker is configured to use the default machine with IP 192.168.99.100, not localhost anymore,
-the machine's IP address is stated every time you run the Docker Quickstart Terminal app from your desktop
+Note that docker is configured to use the default machine with IP 192.168.99.100, not localhost anymore
+The machine's IP address is stated every time you run the Docker Quickstart Terminal app from your desktop
 
 Docker commands:
 See all images: docker images
-Remove an image: docker image rm [IMAGE ID]
+Remove an image: docker rmi [IMAGE ID]
 See all containers: docker ps --all
 See running containers: docker ps
+Start an existing container which is stopped: docker start [CONTAINER ID]
 Stop a running container: docker stop [CONTAINER ID]
 See the public facing port of container: docker port [CONTAINER ID]
 Remove a container: docker rm [CONTAINER ID]

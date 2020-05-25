@@ -1,0 +1,28 @@
+Take note:
+Before every session, first remember to run the Docker Quickstart Terminal app from your desktop
+
+Python Flask side:
+Create an app.py file
+Once you've finished coding, if you want to run app.py on its own,
+Use: python app.py, it will be exposed through localhost:5000
+
+Docker side:
+Create a requirements.txt file to hold dependencies, in this case only Flask and its version number
+Copy and paste the Dockerfile file, make changes where necessary
+Build the docker image using: docker build -t docker-flask-image .
+From this image, we can then create containers using it as a blueprint
+docker run -p 9000:5000 docker-flask-image
+Now the web app will be run inside the docker container and will be exposed through 192.168.99.100:9000
+even though the container is mapping from localhost:5000
+Note that docker is configured to use the default machine with IP 192.168.99.100, not localhost anymore
+The machine's IP address is stated every time you run the Docker Quickstart Terminal app from your desktop
+
+Docker commands:
+See all images: docker images
+Remove an image: docker rmi [IMAGE ID]
+See all containers: docker ps --all
+See running containers: docker ps
+Start an existing container which is stopped: docker start [CONTAINER ID]
+Stop a running container: docker stop [CONTAINER ID]
+See the public facing port of container: docker port [CONTAINER ID]
+Remove a container: docker rm [CONTAINER ID]
