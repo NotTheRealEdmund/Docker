@@ -1,0 +1,22 @@
+Take note:
+Before every session, first remember to run the Docker Quickstart Terminal app from your desktop
+
+C++ side:
+Create a main.cpp file
+
+Docker side:
+Copy and paste the Dockerfile file, make changes where necessary
+Build the docker image using: docker build -t docker-cpp-image .
+From this image, we can then create containers using it as a blueprint and run it
+docker run docker-cpp-image
+Now the app will be run inside the docker container and can be self-contained with its required Clang environment
+
+Docker commands:
+See all images: docker images
+Remove an image: docker rmi [IMAGE ID]
+See all containers: docker ps --all
+See running containers: docker ps
+Start an existing container which is stopped: docker start [CONTAINER ID]
+Stop a running container: docker stop [CONTAINER ID]
+See the public facing port of container: docker port [CONTAINER ID]
+Remove a container: docker rm [CONTAINER ID]
